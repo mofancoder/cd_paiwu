@@ -1,0 +1,79 @@
+/* CSS Document */
+body {margin:0 0;font-size:13px;  color:#323232; text-decoration:none; background:url(image/bj.jpg)  center 90px no-repeat; background-color:#f6f6f6;  font-family:微软雅黑;  }
+ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,p,input,select,label,form,a{ padding:0; margin:0;}
+ul,li{ list-style:none;}
+a{ color:#1585d6; text-decoration:none;}
+ a:hover{ color:#d20000;}
+.clear{ clear:both; padding:0; margin:0;}
+/*头部menu区域*/
+.top{ width:100%; margin:0 auto; padding:0; height:104px; background:url(image/topbj.png) top repeat-x; }
+.w950{ width:950px; margin:auto;}
+.logo{ width:448px; height:59px; margin-top:10px; float:left; margin-left:10px;}
+/*内容区域*/
+.nrbj{ position:relative; background:url(image/bj.png) top left no-repeat;  overflow:hidden; padding-bottom:20px;}
+.nrbj h1{ font-size:25px; color:#fff; line-height:25px; margin-top:62px; margin-left:25px; margin-bottom:62px; }
+.nrbj ul{ padding:0px; margin:0px; margin-left:92px; margin-top:100px; }
+.nrbj ul li{color:#1585d6; font-size:18px; line-height:30px; margin-bottom:50px; }
+.nrbj ul li span{ color:#FC0509; font-size:24px; font-family:"Arial"; padding-right:2px; line-height:30px; font-weight:bold;}
+.zblc1{ position:absolute; width:365px; height:130px; top:120px; left:220px; padding:10px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc2{ position:absolute; width:270px; height:110px; top:247px; right:15px; padding:10px 10px 10px 28px; line-height:20px; font-size:13px; }
+.zblc3{ position:absolute; width:270px; height:110px; top:331px; left:300px; padding:10px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc4{ position:absolute; width:270px; height:65px; top:431px; right:15px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc5{ position:absolute; width:270px; height:98px; top:497px; left:300px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc6{ position:absolute; width:270px; height:98px; top:580px; right:15px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc7{ position:absolute; width:270px; height:98px; top:662px; left:300px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc8{ position:absolute; width:270px; height:98px; top:760px; right:15px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc9{ position:absolute; width:272px; height:65px; top:843px; left:300px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc10{ position:absolute; width:270px; height:65px; top:923px; right:15px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+.zblc11{ position:absolute; width:270px; height:65px; top:1005px; left:300px; padding:8px 10px 10px 28px; line-height:22px; font-size:13px; }
+
+.zblc1bj{ background:url(image/wzbj.png) no-repeat; background-position:0px 0px;}
+.zblc1bja{ background:url(image/wzbj.png) no-repeat; background-position:0px -238px;}
+.zblc1bjb{ background:url(image/wzbj.png) no-repeat; background-position:0px -645px;}
+.input_a{ float:left; width:200px; height:26px; border:solid 1px #d3d3d3; margin:3px 6px 0px 0px; line-height:26px;}
+.btn_input_2{
+            width:49px; float:left;
+		   height:28px;
+		   line-height:28px;
+		   text-align:center;
+		   cursor:pointer;
+		   color:#2892df;
+		   display:inline-block;		   
+		   vertical-align:middle;
+		   margin:3px 10px 0 0px;
+		 background:url(image/anue1.png) no-repeat; background-position:0px 0px; font-size:12px;
+		   }
+		   
+.btn_input_2:hover{color:#d20000;}
+.btn_input_3{
+            width:189px; float:left;
+		   height:28px;
+		   line-height:28px;
+		   text-align:center;
+		   cursor:pointer;
+		   color:#2892df;
+		   display:inline-block;		   
+		   vertical-align:middle;
+		   margin:3px 10px 0 0px;
+		 background:url(image/anue2.png) no-repeat; background-position:0px 0px; font-size:12px;
+		   }
+		   
+.btn_input_3:hover{color:#d20000;}
+.btn_input_4{
+            width:150px; float:left;
+		   height:40px;
+		   line-height:40px;
+		   text-align:center;
+		   cursor:pointer;
+		   color:#fff;
+		   display:inline-block;		   
+		   vertical-align:middle;
+		    border-radius:3px;
+		   -moz-border-radius:3px;
+		   -webkit-border-radius:3px;
+		   margin:20px 150px 0 315px; background:#FC0509; font-size:16px;
+		   }
+.btn_input_4:hover{ color:#fff; background:#1697f5;  }
+/*--------------------版权---------------*/
+.footer{ width:100%; background:#d4d4d4; line-height:24px; padding:20px 0px; text-align:center;}
+

@@ -1,0 +1,15 @@
+.old_system{width:340px;
+          height:260px;
+		  overflow:hidden;
+		  background: url(../img/loginIcon/login_box_bg.png) no-repeat;	
+		  }
+.old_system .layout{
+			   padding:10px;
+			   width:320px;
+			   height:200px;			   
+               text-align:center;
+			   }
+			   
+.w330{width:330px;
+      margin:0 auto;
+	  }

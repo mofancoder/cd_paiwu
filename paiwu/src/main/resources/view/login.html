@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>交易平台-招标</title>
+<meta content="鄂州市建设工程交易平台,鄂州市公共资源交易平台,筑龙软件,筑龙企业交易平台,筑龙招投标软件,Truelore information,Truelore Business trading platform" name="Description" />
+<meta content="鄂州市建设工程交易平台,鄂州市公共资源交易平台,筑龙信息,筑龙软件,筑龙企业交易平台,招投标软件,在线招投标全流程网上服务平台,全流程电子招投标公共平台,招标、投标、开标、评标、定标、标书,电子招投标交易平台,第三方招投标平台,公共资源交易中心,public resource trading center,online bidding,seaouvision,seaou,Truelore Business trading platform,bidding & Tendering Platform,Truelore information" name="Keywords" />
+<script type="text/javascript" src="../META-INF/resources/common/easyui/js/jquery.min.js"></script>
+<link href="/META-INF/resources/common/css/login.css" rel="stylesheet" type="text/css" />
+<link href="/META-INF/resources/common/css/oldSystem.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript' src='/META-INF/resources/common/js/jquery.jcryption-1.1.js' ></script>
+<script type="text/javascript" src="/META-INF/resources/common/js/index_sys.js"></script>
+<link rel='stylesheet' type='text/css' href='/META-INF/resources/common/easyui/css/easyui.css'/>
+<link rel='stylesheet' type='text/css' href='/META-INF/resources/common/easyui/css/icon.css' />
+<script type='text/javascript' src='/META-INF/resources/common/easyui/js/jquery.easyui.min.js'></script>
+<script type='text/javascript' src='/META-INF/resources/common/easyui/js/easyui-lang-zh_CN.js'></script>
+<script type='text/javascript' src='/META-INF/resources/common/easyui/js/validate/easyui_validate.js'></script>
+<link href="/META-INF/resources/common/css/blue_theme.css" rel="stylesheet" type="text/css" title="blue_theme" />
+<script type="text/javascript" src="/META-INF/resources/common/js/TopESAWithESAC.js"></script>
+<script type="text/javascript" src="/META-INF/resources/common/js/CA_Utils.js"></script>
+<OBJECT id="ClientSDK" classid="CLSID:2F926470-FAEB-4E4A-9E9F-22674AB7FA07"></OBJECT>
+<OBJECT ID="DssSDK" CLASSID="CLSID:e3baed06-2188-480c-8c48-7175c00a3c4b"></OBJECT>
+<script type="text/javascript">
+	var certs_obj = "";
+	var cert_obj = "";
+
+
+	if(top!=this) {
+		top.location.href='http://localhost:8081/login.html';
+	}
+	try{
+	  checkIEVersion('http://localhost:8081', true);
+	}catch(e){}
+
+	var keys;
+	function getGongYao(password){
+		$.ajax({
+	        async: false,
+	        cache: false,
+	        type : 'POST',  
+	        dataType: "json",
+	        contentType : 'application/json',  
+	        data: {},
+	        url: 'http://localhost:8081/calogin/getPublicKey.do',
+	        success: function(data) {
+	        	var obj = eval('('+data.output+')');
+	        	$.jCryption.getKeys(obj,function(receivedKeys) {  
+	    			keys = receivedKeys;  
+	    		});  
+	        	//公钥加密
+	        	$.jCryption.encrypt(password,keys,function(encryptedPasswd){
+	        		$("#realPassword").val(encryptedPasswd);
+	        		$("#realYanZhengMa").val($("#yanZhengMa").val());
+	        		$("#module-login-form").submit();
+	        	});
+	        },
+	        error : function(data) {  
+	            alert("error") ; 
+	        } 
+	    });
+	}
+	
+	$(function() {
+		$("#key_user").show();
+		$("#common_user").hide();
+		$(".mode2").click(function() {
+			$("#common_user").hide();
+			$("#key_user").show();
+			$("#dn").val("");
+			$("#cert").val("");
+			$("#sign").val("");
+			$("#CALeiXing").val("");
+			$("#CAChangShang").val("");
+		});
+
+
+		$(".mode").click(function() {
+			$("#key_user").hide();
+			$("#common_user").show();
+			$("#username").val("");
+			$("#password").val("");
+			$("#username").focus();
+		});
+		$("#username").focus();
+		document.onkeydown = function(e) {
+			var ev = document.all ? window.event : e;
+			if (ev.keyCode == 13) {
+				loginSubmit();
+			}
+		};
+
+		//Top CA登陆
+		$("#caLogin").click(function(){
+			try{
+				var CAChangShangStr = "";
+				//1：天威  2：湖北
+				var CALeiXing = checkCAType();
+				var CaInfoObj = {};//证书信息对象
+				if(CALeiXing == 1){
+					CaInfoObj = getTianWeiCaInfo();
+				}else if(CALeiXing == 2 || CALeiXing == 3 || CALeiXing == 4){
+					CaInfoObj = getHuBeiCaInfo();
+					//检查是那个厂商的CA
+					if(cert_obj.Issuer.match(/CN=(.*), OU/)==null){
+						CAChangShangStr = cert_obj.Issuer.match(/CN=(.*), O=/)[1];
+					}else{
+						CAChangShangStr = cert_obj.Issuer.match(/CN=(.*), OU/)[1];
+					}
+				}else{
+					alert("获取证书失败，请检查是否插入证书或正常安装驱动程序!");
+					return;
+				}
+				
+				if(CaInfoObj === false){
+					alert("获取证书信息失败！");
+					return;
+				}
+				var strCert = CaInfoObj.Cert; //证书
+				var ZhuTi = CaInfoObj.ZhuTi; //证书主题
+				var CAType = CaInfoObj.CAType;//证书类型  1:企业 2:个人
+				var CACorp = CaInfoObj.CACorp;//组织机构代码或身份证号
+				var CAName = CaInfoObj.CAName;//企业名称或人员姓名
+				var XuLieHao = CaInfoObj.XuLieHao;//证书序列号
+				var BeginDate = CaInfoObj.BeginDate; //获取起始日期（20160614084326）
+				var EndDate = CaInfoObj.EndDate; //获取截止日期（20170614084326）
+				//交易证书类型
+				if(CAType != 1){
+					alert("请使用机构证书！");
+					return;
+				}
+				var sTime=getSystemTime();//获取服务器时间
+				var fTime=new Date(sTime).Format("yyyyMMddHHmmss");
+				if(BeginDate>fTime){
+					alert("证书不在有效时间范围内！");
+					return;
+				}
+				if(EndDate<sTime){
+					alert("证书已过期！");
+					return;
+				}
+				
+				$.ajax({
+					type : "post",
+					url : "http://localhost:8081/calogin/getIp.do",
+					data : {dn : CACorp, CALeiXing: CALeiXing},
+					dataType : 'json',
+					success : function(data) {
+						stime = data.infoData;
+						var sSignTxt = "";
+						if(CALeiXing == 1){
+							sSignTxt = signDataTianWeiCa(stime, false);
+						}else{
+							sSignTxt = signDataHuBeiCa(stime, false);
+						}
+						
+						if (sSignTxt == ""){
+							alert("签名失败！");
+							return;
+						}
+						
+						$("#dn").val(CACorp);
+						$("#cert").val(strCert);
+						$("#sign").val(sSignTxt);
+						$("#CALeiXing").val(CALeiXing);
+						$("#CAChangShang").val(CAChangShangStr);
+						$("#ca-login-form").submit();
+					}
+				});
+				
+			}catch(e){
+				alert("获取证书失败，请检查是否插入证书或正常安装驱动程序!");
+			}
+			
+		});
+	});
+
+	function loginSubmit() {
+		if(checkPassword()){
+			getGongYao($("#password").val());
+		}else{
+			alert("密码必须包含字母或数字，最多16位");
+			return;
+		}
+	}
+	
+	function checkPassword(){
+		var patrn=/[a-zA-Z]+|\d+/;
+		if (!patrn.exec($("#password").val())){
+			return false;
+		} 
+		return true;
+	}
+	
+	function showMessageParent(message, title, showType, showPosition ){
+		var titleTmp = title;
+		titleTmp = "提示";
+		
+		var showTypeTmp = showType;
+			showTypeTmp = 'slide';
+			$.messager.show({
+				title: titleTmp,
+				msg: message,
+				showType: showTypeTmp
+			});
+			return;
+		var styleObj = {};
+		if(showPosition == 'TopLeft'){
+			//上左
+			styleObj = {
+				right:'',
+				left:0,
+				top:document.body.scrollTop+document.documentElement.scrollTop,
+				bottom:''
+			};
+		}else if(showPosition == 'TopCenter'){
+			//上中
+			styleObj = {
+				right:'',
+				top:document.body.scrollTop+document.documentElement.scrollTop,
+				bottom:''
+			};
+		}else if(showPosition == 'TopRight'){
+			//上右
+			styleObj = {
+				left:'',
+				right:0,
+				top:document.body.scrollTop+document.documentElement.scrollTop,
+				bottom:''
+			};
+		}else if(showPosition == 'CenterLeft'){
+			//中左
+			styleObj = {
+				left:0,
+				right:'',
+				bottom:''
+			};
+		}else if(showPosition == 'Center'){
+			//中
+			styleObj = {
+				right:'',
+				bottom:''
+			};
+		}else if(showPosition == 'CenterRight'){
+			//中右
+			styleObj = {
+				left:'',
+				right:0,
+				bottom:''
+			};
+		}else if(showPosition == 'BottomLeft'){
+			//下左
+			styleObj = {
+				left:0,
+				right:'',
+				top:'',
+				bottom:-document.body.scrollTop-document.documentElement.scrollTop
+			};
+		}else if(showPosition == 'BottomCenter'){
+			//下中
+			styleObj = {
+				right:'',
+				top:'',
+				bottom:-document.body.scrollTop-document.documentElement.scrollTop
+			};
+		}else{
+			//下右
+			$.messager.show({
+				title: title,
+				msg: message,
+				showType:'slide'
+			});
+			return;
+		}
+
+		$.messager.show({
+			title: titleTmp,
+			msg: message,
+			showType:'slide',
+			style:styleObj
+		});
+	}
+	
+	function getXMLRequest(){  
+		    var request;  
+		    try{  
+		        //for火狐等浏览器  
+		        request = new XMLHttpRequest();  
+		    }catch(e){  
+		        try{  
+		            //for IE  
+		            request = new ActiveXObject("Microsoft.XMLHttp");    
+		        }catch(e){  
+		            alert("您的浏览器不支持AJAX!!!");  
+		            return null;  
+		        }  
+		    }  
+		    return request;  
+		} 
+
+	
+	function checkcode(){  
+		    var request = getXMLRequest();//得到XMLHttpRequest对象  
+		    request.onreadystatechange = function(){  
+		        if(request.readyState == 4){  
+		            document.getElementById("code").src = "http://localhost:8081/calogin/getImage.do";//改变验证码图片  
+		        }  
+		    }  
+		                //将请求发送出去  
+		    request.open("GET","http://localhost:8081/calogin/getImage.do",true);  
+		    request.send(null);  
+		}  
+
+	function changeLogin(flag){
+		if(flag == 1){
+			$(".new_login").hide();
+			$(".old_login").show();
+		}else{
+			$(".new_login").show();
+			$(".old_login").hide();
+		}
+	}
+	
+	//获取服务器系统时间，毫秒数
+	function getSystemTime(){
+
+		var longTime = 0;
+		try{
+			$.ajax({
+				async: false,
+	            cache: false,
+				type : 'POST',  
+	 			contentType : 'application/json', 
+	 			dataType : 'json', 
+	 			url:'http://localhost:8081/dict/getSystemTime.do',
+	 			success : function(data) {  
+	 				longTime = data.dateTime;
+	 		    },  
+	 		   	error : function(data) {  
+	 		   		longTime = 0;
+	 		   	}  
+	 		});
+		}catch(e){
+			longTime = 0;
+		}
+		return longTime;
+	}
+	
+	/**
+	 * 格式化日期 
+	 * 调用方式： var str = new Date().Format("yyyy-MM-dd HH:mm:ss");
+	 */
+	Date.prototype.Format = function (fmt) { //author: meizz  
+	    var o = { 
+	        "M+": this.getMonth() + 1, //月份  
+	        "d+": this.getDate(), //日  
+	        "H+": this.getHours(), //小时  
+	        "m+": this.getMinutes(), //分  
+	        "s+": this.getSeconds(), //秒  
+	        "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+	        "S": this.getMilliseconds() //毫秒  
+	    }; 
+	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)); 
+	    for (var k in o) 
+	        if (new RegExp("(" + k + ")").test(fmt)) 
+	            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length))); 
+	    return fmt; 
+	} ;
+	
+	/*jiezc add 2017-04-13*/
+	function ca_xuanZe_win(){
+		$("#ca_xuanze_div").window({
+			title:'ca证书',
+			width:280,    
+			height:280,    
+			modal:true,
+			maximizable:false,
+			minimizable:false,
+			collapsible:false,
+			closed:true,
+			inline:false,
+			cache:false
+        });
+	   	$("#ca_xuanze_div").window("open");  
+	}
+</script>
+</head>
+
+<body>
+	<div class="top">
+		<div class="w1000">
+			<div class="logo_zb"></div>
+		</div>
+	</div>
+
+	<div class="main_wrap_zb">
+		<div class="w1000 new_login">
+			<div class="login_box_400">
+				<div class="con_wrap" id="key_user">
+					<div class="con">
+						<div>
+							<span style="color:red">
+								<!--<#if (SPRING_SECURITY_LAST_EXCEPTION.message)??>${SPRING_SECURITY_LAST_EXCEPTION.message}</#if>-->
+							</span>
+						</div>
+						<form id="ca-login-form" action="http://localhost:8081/login" method="post">
+							<input type="hidden" name="dn" id="dn"/>
+							<input type="hidden" name="cert" id="cert"/>
+							<input type="hidden" name="sign" id="sign"/>
+							<input type="hidden" name="CALeiXing" id="CALeiXing"/>
+							<input type="hidden" name="CAChangShang" id="CAChangShang"/>
+						</form>
+						<img src="/META-INF/resources/common/img/data_key.png" />
+						<h4>请插入CA机构认证锁</h4>
+						<span class="btn" id="caLogin"></span>
+						<h5>
+							<a href="javascript:void(0);" class="mode">切换至帐号登录</a>
+						</h5>
+					</div>
+				</div>
+	
+				<div class="con_wrap" id="common_user">
+					<div class="con">
+						<div>
+							<span style="color:red">
+							<!--<#if (SPRING_SECURITY_LAST_EXCEPTION.message)??>${SPRING_SECURITY_LAST_EXCEPTION.message}</#if>-->
+							</span>
+						</div>
+						<form id="module-login-form" action="http://localhost:8081/login" method="post">
+							<p>
+								<span>登录名：</span><input class="text_input_login" id="username"
+								onkeyup="value=value.replace(/[^\w\\]/ig,'')" maxlength="16"
+								onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\W]/g,''))"
+									name="username" />
+								<input type="hidden" id="realPassword" name="password"/>
+								<input type="hidden" id="realYanZhengMa" name="yanZhengMa"/>
+							</p>
+						</form>
+							<p>
+								<span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" maxlength="16"
+									class="text_input_login" id="password"/>
+							</p>
+							<p><span>验证码：</span><input type ="text" id="yanZhengMa" class="text_input_login" style="width:60px"/>
+							   <img id="code" src="http://localhost:8081/calogin/getImage.do">
+							   <a href="#" onclick="checkcode()">看不清</a> 
+							</p>
+							<p>
+								<span></span><span class="btn" onclick="loginSubmit()"></span>
+								<a href="findPWD.html" target="_blank">忘记密码</a>
+							</p>
+						
+						<h5>
+							<a href="javascript:void(0);" class="mode2">切换至CA登录</a>
+						</h5>
+					</div>
+				</div>
+				<div class="right_1">
+					<div class="sbdj">
+						<ul>
+							<li><img src="/META-INF/resources/common/img/icon_1.png"></li><!-- 立即注册 -->
+							<li><img src="/META-INF/resources/common/img/icon_2.png"></li><!-- 下载CA证书驱动 -->
+							<li><img src="/META-INF/resources/common/img/icon_6.png"></li><!-- 电子投标流程介绍 -->
+							<li><img src="/META-INF/resources/common/img/icon_2.png"></li><!-- 投标系统功能介绍 -->
+							<li><img src="/META-INF/resources/common/img/icon_7.png"></li><!-- 系统操作指导视频 -->
+						</ul>
+						<div class="zknr">
+							<ul>
+								<li>
+									<a href="http://ggzyj.ezhou.gov.cn/jy-zhaobiao/register.html" target="_blank">立即注册</a>
+								</li>
+								<li>
+									<a href="http://ggzyj.ezhou.gov.cn/file/downloadFile?fileId=38e89206-37a1-45c0-bbbc-2ba276c2a43c">下载CA证书驱动</a>
+								</li>
+								<li>
+									<a href="http://ggzyj.ezhou.gov.cn/fuwuzhinan/fwzn.html" target="_blank">系统操作指导流程</a>
+								</li>
+								<li>
+									<a href="http://ggzyj.ezhou.gov.cn/fuwuzhinan/fwzn.html?caidanbh=3&xiazai=1" target="_blank">标书编制系统下载</a>
+								</li>
+								<li class="one2">
+									<a href="http://ggzyj.ezhou.gov.cn/jy-zhaobiao/czindex.html" target="_blank">电子招标流程介绍</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="w1000 old_login" style="display: none;">
+			<div class="login_box_400">
+				<div class="con_wrap">
+					<div class="con">
+						<h4 align="center">旧版网站网上办事入口:</h4>
+						<a href="http://www.ezztb.gov.cn/default.aspx" target="_blank"><span class="submit_btn">进入</span></a>
+						<br/>
+						<h5>
+							温馨提示：鄂州市建设工程交易服务中心
+							新系统与旧系统并行期间，信息来源为旧
+							系统的工程，请招标人（招标代理）、投
+							标人通过此入口进入旧版交易网站网上办
+							事模块进行业务办理。
+						</h5>
+					</div>
+					<div style="padding-top: 5px;text-align: center;font-size: 16px;cursor: pointer;"><a onclick="changeLogin(2)">切换新版系统</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="info_bar">
+		<div class="w1000" style="padding-left:45px;">
+			<ul>
+				<li style="background-position:0 -486px;width:130px;">
+ 					<h4>交易助手</h4>
+					<p>
+						<a href="http://jyzs.zhulong.com.cn/ezhou/trueLore.JiaoYiZhuShou.application">交易平台使用助手</a>
+					</p>
+				</li>
+				
+				<li style="background-position:0 -122px;width:130px;">
+					<h4>我要招标</h4>
+					<p>
+						<a href="http://localhost:8081/czindex.html" target="_blank">电子招标如何操作</a>
+					</p>
+				</li>
+				<li style="width:130px;">
+					<h4>我要注册</h4>
+					<p>
+						<a href="http://localhost:8081/register.html">开始注册</a>
+					</p>
+				</li>
+				
+				<li style="width:130px;">
+					<h4>数字证书</h4>
+					<p>
+						<a href="http://sm2.whca.org.cn/upcert4/remote/user_login?t=1">颐信CA：进入办理</a>
+					</p>
+					<p>
+						<a href="http://css.hbca.org.cn:8088/hbcaysl/web/businessQuery.jsp">湖北CA：进入办理</a>
+					</p>
+				</li>
+
+				<li style="background-position:0 -244px;width:130px;">
+					<h4><strong ><b><span style="color: red;">驱动下载</span></b></strong></h4>
+					<p>
+						<a href="${fileUrl}/downloadFile?fileId=38e89206-37a1-45c0-bbbc-2ba276c2a43c">下载</a>
+					</p>
+				</li>
+
+				<li style="background-position:0 -379px;width:130px;">
+					<h4>帮助中心</h4>
+					<p>
+						<a href="${zhaoBiaoWaiWangUrl}/help.html?moduleCode=111&menuCode=112" target="_blank">在线帮助</a>
+					</p>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="footer_login">
+		<div class="w1000">
+			<p>主办：鄂州市公共资源交易监督管理局&nbsp;&nbsp;电话：0711-3358306&nbsp;&nbsp;传真：0711-3358309
+				承办：鄂州市公共资源交易中心&nbsp;&nbsp;电话：0711-3358312</p>
+			<p>
+				北京筑龙信息技术有限责任公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提供技术支持&nbsp;服务热线：400-9618-998&nbsp;在线QQ咨询：400-9618-998&nbsp;湖北CA数字证书服务电话：400-870-8080 &nbsp;颐信CA数字证书服务电话：027-82819995
+
+			</p>	
+		</div>
+	</div>
+</body>
+</html>

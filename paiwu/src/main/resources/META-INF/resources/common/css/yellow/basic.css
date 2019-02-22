@@ -1,0 +1,1464 @@
+﻿@charset "utf-8";
+/* CSS by linzhaohai;linzhaohai@hotmail.com;seaou.com;qq:3026026 */
+
+body,ul,li,ol,h1,h2,h3,h4,p,th,td,dl,dd,form,fieldset,legend,label,input,textarea,select{margin:0;padding:0}
+
+html,body{min-width:1000px;
+          overflow-y:hidden;
+		  }
+		  
+body{
+	 font:13px/1.7 Arial,"Microsoft yahei","微软雅黑",Tahoma,Verdana,Helvetica, sans-serif;		 
+	 color:#0D0D03;
+	 }
+	 
+a{color:#484a4b;
+  text-decoration:none;
+  outline:none;
+  }
+  
+a:hover{color:#000;
+       }	   
+   
+li{list-style:none}
+
+img{border:0;
+    vertical-align:top;
+	}
+	
+em{color:#d8800e;
+   }
+   
+i{color:#1480dc}
+
+red{color:#d42411}	
+
+input{ font-family:Arial,"Microsoft yahei","微软雅黑"}
+	
+.clear{clear:both;}
+	
+table{border-collapse:collapse;
+      border-spacing:0;
+	  }
+
+.top_wrap{height:40px;
+          vertical-align:middle;
+		  background:#c58a0b url(../../img/top_bg.png) repeat-x;
+		  }
+		  
+.logo{width:395px;
+      height:40px;
+	  background: url(../../img/logo.png) no-repeat;
+	  margin:0 0 0 10px;
+	  }
+	  
+.jg_logo{background-position:0 -50px;}
+
+.zx_logo{background-position:0 -111px;}
+	  
+.user_info{min-width:540px;
+           height:40px;
+           color:#f8f3cf;
+		   float:right;
+		   line-height:40px;
+		   vertical-align:middle;
+		   }
+		   
+.user_info b{color:#fff;}
+		   
+.user_info span{margin:0 20px 0 10px;
+               vertical-align:middle;
+			   }
+		   
+.user_info ul{width:160px;
+			  float:right;
+			  margin:7px 0 0 0\0;
+             }
+			 
+.user_info li{float:left;
+              margin:0 15px 0 5px;
+			  vertical-align:middle;
+			  }
+			  
+a.ui_setting{width:27px;
+            height:26px;
+			display:inline-block;
+			vertical-align:middle;
+			border-radius:2px;
+			 -moz-border-radius:2px;
+			 webkit-border-radius:2px;
+			background: url(../../img/top_bg.png) -41px -197px no-repeat;
+			}
+			
+a.ui_setting:hover,
+a.ui_setting.active{background-color:rgba(0,0,0,0.2)}
+
+a.logout{width:80px;
+        height:24px;
+		line-height:24px;
+		display:inline-block;	
+		text-decoration:none;
+		border:1px solid #b8710c;
+		border-radius:4px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		background-color:rgba(255,255,255,0.2)
+		}
+
+a.logout i{display:inline-block;
+           width:80px;
+		   height:24px;
+		   color:#000;
+		   font-style:normal;
+		   text-indent:33px;
+		   background: url(../../img/top_bg.png) -77px -198px no-repeat;
+		   }
+		
+a.logout:hover{color:#fff;
+              border:1px solid rgba(255,255,255,0.8);
+			  }
+			  
+a.logout:hover i{color:#fff;}
+
+.setting_box{width:120px;
+             height:200px;
+			 padding:5px 10px;			 
+			 background-color:#fff;
+			 display:none;
+			 position:absolute;
+			 z-index:999;
+			 top:38px;
+			 right:128px;			 	
+			 border:2px solid #c58a0b;
+			 }
+			 
+.setting_box li{margin:5px 0 5px 0;}
+
+.setting_box li span{width:115px;
+                  font-size:16px;
+				  display:inline-block;
+                  padding:3px 0 3px 5px;
+				  border-bottom:1px solid #eceff2;
+				  }
+			 
+.theme{text-align:center;
+       padding:5px 0 5px 0;
+	   }
+
+.theme a{width:20px;
+         height:20px;
+		 display:inline-block;
+		 font-size:0;
+		 margin:2px 3px;
+		 vertical-align:middle;
+		 }
+
+a.blue_block{background-color:#1180dd;}
+
+a.green_block{background-color:#68bb0f;}
+
+a.yellow_block{background-color:#e8ad0f;}
+
+a.red_block{background-color:#e71818;}
+				
+.tools_wrap{height:79px;
+            background:#fbf0c8 url(../../img/top_bg.png) 0 -233px repeat-x;
+            }
+			
+.tools_icons{height:79px;
+             background: url(../../img/top_bg.png) right -472px no-repeat;
+			 }
+
+.tools_icons ul{padding:14px 10px 0 5px;}
+
+.tools_icons ul li{width:60px;
+                   float:left;
+				   text-align:center;
+                   margin:0 5px 0 5px;
+				   padding:4px 2px 2px 2px;
+				   overflow:hidden;
+				   font-size:12px;				   
+				   font-family:Arial,"宋体",\5B8B\4F53;
+				   position:relative;
+				   transition: all 0.3s ease-out 0s;
+				   -moz-transition: all 0.3s ease-out 0s;/* Firefox 4 */
+				   -webkit-transition: all 0.3s ease-out 0s;/* Safari and Chrome */
+				   -o-transition: all 0.3s ease-out 0s; /* Opera */
+				    border-radius:4px;
+					-moz-border-radius:4px;
+					-webkit-border-radius:4px;				   
+				   }
+				   
+.tools_icons ul li:hover{top:-2px;
+                         background-color:rgba(255,255,255,0.8)
+						 }
+				   
+.tools_icons ul li a{width:32px;
+                     height:32px;
+					 display:inline-block;
+					 vertical-align:top;					 
+					 background: url(../../img/tools_icons.png) -52px -148px no-repeat;
+					 }
+					 
+.tools_icons ul li p{color:#6c6862;
+                     padding:2px 0 0 0 ;
+					 }
+					 
+.tools_icons ul li:hover p{
+                           color:#000;
+						   }
+						   
+.tools_icons a span{
+                    width:32px;
+                    height:32px;
+					display:inline-block;
+					background: url(../../img/tools_icons.png) no-repeat;
+					}
+
+.tools_icons .home_icon{}
+
+.tools_icons .zbwj_icon{background-position:-198px 0;}/*招标文件图标*/
+
+.tools_icons .zbgg_icon{background-position:-132px 0;}/*招标公告图标*/
+
+.tools_icons .zbkzj_icon{background-position:-264px 0;}/*招标控制价图标*/
+
+.tools_icons .zbyc_icon{background-position:-811px 0;}/*招标异常图标*/
+
+.tools_icons .fygl_icon{background-position:-399px 0;}/*费用管理图标*/
+
+.tools_icons .qyxx_icon{background-position:-536px 0;}/*企业信息图标*/
+
+.tools_icons .tscl_icon{background-position:-876px 0;}/*投诉处理图标*/
+
+.tools_icons .ssjk_icon{background-position:-941px 0;}/*电话薄图标*/
+
+.tools_icons .gcgz_icon{background-position:-330px 0;}/*工程跟踪图标*/
+
+.tools_icons .tjfx_icon{background-position:-468px 0;}/*统计分析图标*/
+
+.tools_icons .hyyy_icon{background-position:-67px 0;}/*会议预约图标*/
+
+.tools_icons .myinfo_icon{background-position:-604px 0;}/*我的信息图标*/
+
+.tools_icons .help_icon{background-position:-941px -51px;}/*在线帮助图标*/
+
+.tools_icons .jrsx_icon{background-position:-673px 0;}/*今日事项图标*/
+
+.tools_icons .jyw_icon{background-position:-742px 0;}/*返回交易网图标*/
+
+.tools_icons .gcbj_icon{background-position:0 -51px;}/*工程报建图标*/
+
+.tools_icons .gcjy_icon{background-position:0 -94px;}/*工程交易图标*/
+
+.tools_icons .bgcq_icon{background-position:-198px -51px;}/*变更澄清图标*/
+
+.tools_icons .zgsc_icon{background-position:-264px -51px;}/*资格审查图标*/
+
+.tools_icons .tbbm_icon{background-position:-330px -51px;}/*投标报名图标*/
+
+.tools_icons .tbwj_icon{background-position:-399px -51px;}/*投标文件图标*/
+
+.tools_icons .cqwt_icon{background-position:-468px -51px;}/*澄清问题图标*/
+
+.tools_icons .kb_icon{background-position:-536px -51px;}/*开标图标*/
+
+.tools_icons .gzgc_icon{background-position:-604px -51px;}/*关注工程图标*/
+
+.tools_icons .fsly_icon{background-position:-673px -51px;}/*发送留言图标*/
+
+.tools_icons .sjdx_icon{background-position:-742px -51px;}/*返回交易网图标*/
+
+.tools_icons .zjgl_icon{background-position:-811px -52px;}/*招标异常图标*/
+
+.tools_icons .dhb_icon{background-position:-876px -51px;}/*电话薄图标*/
+
+.tools_icons .jsgl_icon{background-position:-66px -93px;}/*角色管理图标*/
+
+.tools_icons .qxgl_icon{background-position:-133px -92px;}/*权限管理图标*/
+
+.tools_icons .ycrz_icon{background-position:-198px -92px;}/*异常日志图标*/
+
+.common_wrap{height:50px;
+             overflow:hidden;
+			 background-color:#e8b80f;			 
+			 }
+			 
+.role_box{width:200px;	
+		  height:50px;
+		  float:left;
+		  overflow:hidden;
+		  }
+		  
+.role_box ul,
+ul.role_choose{width:70px;
+			   height:50px;
+			   padding:5px 5px 0 5px;
+			   background-color:#e8b80f;
+			   }
+			   
+.role_box ul{float:left;}
+			 
+ul.role_choose{min-height:50px;
+               height:auto!important;
+               left:0px;
+               top:50px; /*2014-9-1 zhengkai top 169改为 50px*/
+               z-index:999;
+			   display:none;
+			   position:absolute;
+			   }
+			
+.role_box li,
+ul.role_choose li{
+			 margin:0 0 5px 0;
+			 overflow:hidden;
+			 vertical-align:middle;
+			 float:left;
+			 background-color:#70bcf8;
+			 }
+			   
+.role_box li a,
+ul.role_choose li a{height:45px;
+			   width:70px;
+			   display:inline-block;
+			   vertical-align:middle;
+			   overflow:hidden;
+				}
+				
+.role_box li a:hover,
+ul.role_choose li a:hover{background-color:#fff;}
+				   
+.zb_user{background:#f4e08d url(../../img/role_icons.png) 16px -65px no-repeat;}
+
+.tb_user{background:#f4e08d url(../../img/role_icons.png) -63px -65px no-repeat;}
+
+.zx_user{background:#f4e08d url(../../img/role_icons.png) -140px -65px no-repeat;}
+
+.jg_user{background:#f4e08d url(../../img/role_icons.png) -214px 0 no-repeat;}
+
+.kz_user{background:#f4e08d url(../../img/role_icons.png) -275px -67px no-repeat;}
+				   
+.role_box h1{width:115px;                      
+			 height:35px;
+			 color:#000;
+			 padding:15px 0 0 5px;
+			font-size:20px;
+			font-weight:100;
+			display:inline-block;
+			vertical-align:middle;
+			letter-spacing:2px;
+			overflow:hidden;
+			}
+			
+.role_box h1 a{width:14px;
+               height:14px;
+			   vertical-align:middle;
+			   display:inline-block;
+			   margin:0 5px 0 5px;
+			   cursor:pointer;
+			   font-size:0;
+			   background: url(../../img/role_icons.png) -324px -4px no-repeat;
+			   }			  				  
+
+.role_box h1 a:hover{background-position:-367px -4px;}
+				  
+.role_box a.active{background: url(../../img/role_icons.png) -324px -27px no-repeat;
+		  }
+		  
+.role_box a.active:hover{ background-position:-367px -27px;}
+				  
+
+
+.search_bar{float:right;
+            width:305px;
+			height:36px;
+			margin:8px 20px 0 0;
+			padding:4px 0 0 5px;
+			vertical-align:middle;
+			background: url(../../img/search_bar_bg.png) 0 -168px no-repeat;
+			}
+
+.search_bar input{border:none;
+                  width:256px;
+				  background:transparent;
+				  height:26px;
+				  line-height:26px;
+				  color:#383734;
+				  font-size:13px;
+				  padding-left:4px;
+				  vertical-align:middle;
+				  outline:none;
+                  }
+				  
+.search_btn{width:40px;
+            height:26px;		
+			cursor:pointer;
+			display:inline-block;
+			vertical-align:middle;
+			background: url(../../img/search_bar_bg.png) -265px -227px no-repeat;			
+			}
+			
+.search_btn:hover{ background-position:-265px -282px;}
+
+ul.main_tabs{padding:15px 10px 0 15px;
+            }
+			
+ul.main_tabs li{float:left;                
+				height:34px;
+				font-size:16px;
+				border:1px solid #d4a20b;
+				border-bottom:none;
+				vertical-align:middle;
+				margin:0 5px 0 5px;
+				background-color:#f4e08d;
+				}
+				
+ul.main_tabs li.selected{border:1px solid #fff;
+                         background:#fbe78c url(../../img/main_tabs.png) 0 -5px repeat-x;
+						 }
+				
+ul.main_tabs li a{min-width:70px;
+                  width:auto!important;
+				  color:#6c4b18;
+				  height:34px;
+				  line-height:32px;
+				  display:inline-block;
+				  vertical-align:middle;
+				  padding:0 10px 0 15px;
+                  }
+				  
+ul.main_tabs li.selected a{color:#000;}
+						   
+.tabs_close{float:right;
+            width:14px;
+			height:14px;
+			font-size:0;			
+			cursor:pointer;
+			display:inline-block;
+			vertical-align:middle;
+			margin:9px 5px 0 0;
+			background: url(../../img/main_tabs.png) 2px -51px no-repeat;
+			}
+			
+.tabs_close:hover{background:#de2714 url(../../img/main_tabs.png) 2px -79px no-repeat;}
+			
+.big_wrap{
+          overflow-y:hidden;
+		  overflow-x:hidden;
+		  min-width:1000px;
+		  position:absolute;
+		  top:50px;/*2014-9-1 zhengkai top 169改为 50px bottom 40改为 0px*/
+		  left:0;
+		  right:0;
+		  bottom:0px;		  
+		  }
+		  
+.main_wrap{left:200px;
+		  min-width:800px;
+		  position:absolute;
+		  top:0;
+		  right:0;
+		  bottom:0;		 
+		  overflow-y:auto;
+		  overflow-x:hidden;
+		  }
+		  
+.main_con{
+		  height:auto!important;
+		  padding:10px;
+		  }
+
+.main_con_expand{
+			margin-top:50px;
+		  }				  
+		  
+.main_con table{width:100%;}
+
+.full_width{}
+
+.full_width .main_wrap{left:0;
+                       min-width:1000px;
+					   }
+					   
+.full_width .left_wrap{visibility:hidden;}
+			
+/*左边菜单开始*/
+		  
+.left_wrap{width:200px;
+		  background:#f4e08d url(../../img/left_bg.gif) -230px 0 repeat-y;	  
+		  position: absolute;
+		  overflow:hidden;
+		  left:0;
+		  top:0;
+		  bottom:0;
+		  }
+		  
+.left_nav{height:100%;          
+		  overflow:auto;
+		  overflow-x:hidden;
+		  }
+		  
+.left_nav .mCustomScrollBox {padding:0 0 0 5px;
+							 }
+
+.left_nav .mCSB_container{}
+		  
+.left_nav ul{padding:5px 0 0 0;
+            height:100%;					
+			}
+ 
+.left_nav li > a{width:170px;
+                 height:34px;
+				 line-height:34px;
+				 font-size:16px;
+				 color:#6c4b18;
+				 position:relative;
+				 padding:0 0 0 15px;
+				 display:inline-block;
+				 border-bottom:1px solid #e8b80f;				 
+				 background: url(../../img/left_menu_arrow.gif) 95% -108px no-repeat;
+				 }
+				 
+.left_nav li > a:hover{color:#000;
+                       border-bottom:1px solid #fff;
+                       background: url(../../img/left_menu_arrow.gif) 95% -45px no-repeat;
+					   }
+
+.left_nav li > a.current{color:#000;
+                         border-bottom:1px solid #fff;
+						 background:#fff url(../../img/left_menu_arrow.gif) 95% -78px no-repeat;
+						 }
+						 
+.left_nav li > a span{width:5px;
+                        height:35px;
+						font-size:0;
+						background-color:#e8b80f;
+						position:absolute;
+						top:0;
+						left:-5px;
+						}
+						
+.left_nav li > a:hover span,
+.left_nav li > a.current span{background-color:#fdf4c3;}
+						 
+.left_nav li dl{
+                padding:2px 0 3px 0;
+				display:none;
+				width:185px;
+				background-color:#f8eeba;
+				}	
+
+.left_nav li dl a{width:170px;
+                    height:30px;
+                    line-height:30px;
+					font-size:15px;
+					color:#9a5b08;
+					padding:0 0 0 15px;
+					display:inline-block;
+					border-bottom:1px solid #e8b80f;
+					transition: all 0.3s ease-out 0s;
+			   -moz-transition: all 0.3s ease-out 0s;/* Firefox 4 */
+			   -webkit-transition: all 0.3s ease-out 0s;/* Safari and Chrome */
+			   -o-transition: all 0.3s ease-out 0s; /* Opera */
+					}
+					
+.left_nav li dl a:hover,
+.left_nav li dl a.current{color:#000;
+                          border-bottom:1px solid #fff;
+						  background-color:#fcf8e1;
+						  }
+						  
+/*左边菜结束*/
+
+.flow_dot_list .dot{width:19px;
+                 height:19px;
+				 font-size:0;
+				 vertical-align:middle;
+				 display:inline-block;
+				 background: url(../../img/work_flow_dots.png) no-repeat;
+				 }
+
+.flow_dot_list .finished{background-position:0 -50px;}
+
+.flow_dot_list .processing{background-position:0 -100px;}
+
+.flow_dot_list .pausing{background-position:0 -150px;}
+				 
+.flow_dot_list .t_l,
+.table_list .t_l{text-align:left;
+                 min-width:70px;
+				 white-space:nowrap;
+				 padding:0 5px 0 10px;
+				 }
+				 
+.flow_dot_list td, 
+.flow_dot_list th{text-align:center;
+                 font-size:14px;
+				 }
+			
+.footer{height:40px;
+		white-space:nowrap;
+		/*position: absolute;*//*2014-9-29 delete by zhengkai */
+		left:0;
+		right:0;
+		bottom:0;
+		overflow-x:hidden;
+		background-color:#e8b80f;
+		font-family:Arial,"宋体",\5B8B\4F53;
+		}
+		
+.footer p{color:#6c4b18;
+          font-size:12px;
+		  padding:8px 10px 0 10px;
+		  }
+		  
+.footer span{margin:0 20px 0 10px;}
+
+
+/* vertical scrollbar */
+.mCSB_container{
+	width:auto;
+	margin-right:0;
+}
+
+.mCSB_container.mCS_no_scrollbar{
+	margin-right:0;
+}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{
+	margin-right:0px;
+}
+.mCustomScrollBox>.mCSB_scrollTools{
+	width:10px;
+	height:100%;
+	top:0;
+	right:0;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0; 
+	height:auto;
+}
+.mCSB_scrollTools a+.mCSB_draggerContainer{
+	margin:20px 0;
+}
+.mCSB_scrollTools .mCSB_draggerRail{
+	width:2px;
+	height:100%;
+	margin:0 auto;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+}
+.mCSB_scrollTools .mCSB_dragger{
+	cursor:pointer;
+	width:100%;
+	height:128px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width:6px;
+	height:100%;
+	margin:0 auto;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	text-align:center;
+}
+
+.mCSB_dragger_bar a{display:inline-block;
+                    width:6px;
+					height:18px;
+					vertical-align:middle;
+					margin-top:50px;
+					background: url(../../img/dragger_arrow.png) 1px 6px no-repeat;
+					   }
+					   
+.mCSB_dragger_bar a:hover{ background-position:1px -17px}
+
+
+.mCSB_dragger_bar a.active{ background-position:-7px 6px}
+
+.mCSB_dragger_bar a.active:hover{ background-position:-7px -17px}
+
+/*dark (dark colored scrollbar)*/
+.mCS-dark>.mCSB_scrollTools .mCSB_draggerRail{	
+	/*background:rgba(255,255,255,0.18);*/
+	background-color:#e8b80f;
+	width:10px;
+	-webkit-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	}
+
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{		
+	background-color:#c58a0b;
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+	background-color:#7c4804;
+	/*background:rgba(0,0,0,0.85);*/
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+	/*background:rgba(0,0,0,0.9);*/
+	background-color:#7c4804;
+}
+
+
+
+
+.calendar_box{width:393px;
+              padding:10px;
+			  position:relative;
+			  border:1px solid #d7b347;
+			  }
+			  
+.calendar_box .con{padding:5px 0;}
+			  
+.head_select{height:38px;
+             padding:5px 0;
+			 border-bottom:1px solid #d7b347;			 
+			 }
+			 
+.select_year,
+.select_month,
+.select_holiday,
+.backtoday{position:relative;
+           float:left;
+		   width:100px;
+		   margin:0 5px;
+		   }
+		   
+.select_year{width:90px;}
+.select_month{width:75px;}
+.select_holiday{width:100px;}
+.backtoday{width:80px;
+		   margin:0 0 0 5px;
+		   border: 1px solid #a8a7a7;
+		   cursor: pointer;
+		   color:#474848;
+		   padding:4px;
+		   text-align:center;
+		   background: #fff;
+		   border-radius:4px;		   
+		   }
+		   
+ul.week_days{height:34px;
+             font-size:16px;
+			 color:#000;			 
+			 }
+			 
+ul.week_days li{float:left;
+                width:56px;				
+				height:34px;
+				line-height:34px;
+				text-align:center;
+				border-bottom:1px solid #c8cacc;
+				}				
+ul.week_list,
+ul.week_list a{color:#8b8c8c;}
+
+ul.week_list a{width:55px;
+               height:58px;
+			   display:inline-block;
+			   overflow:hidden;
+               }
+			   
+ul.week_list a.active{width:51px;
+                      height:54px;
+					  border:2px solid #eea518;
+					  }
+
+ul.week_list li{width:55px;
+                height:58px;
+				text-align:center;
+				float:left;
+				padding:1px 0 0 1px;
+				position:relative;
+				overflow:hidden;
+				border-bottom:1px solid #c8cacc;
+			   }
+			   		   
+.day_number{color:#000;
+			font-size:18px;
+			font-weight:100;
+			padding:4px 0 0 0;
+			line-height:26px;
+			margin:0
+			}
+			
+.day_sign{width:16px;
+          height:16px;
+		  line-height:16px;
+		  color:#fff;
+		  overflow:hidden;
+		  font-size:13px;
+		  text-indent:-1px;		  
+		  left:1px;
+		  top:1px;
+		  position:absolute;
+		  vertical-align:middle;		  
+		  font-family:Arial,"宋体",\5B8B\4F53;		  
+		  }
+		  
+.day_almanac{line-height:26px;
+             font-family:Arial,"宋体",\5B8B\4F53;
+			 }			 
+		  
+a.rest{background-color:#f3f8e3;}
+		  
+a.rest .day_sign{background-color:#80b410;}
+
+a.festival .day_almanac{color:#d70b0b;}
+
+a.weekend .day_number{color:#4e7c0c}
+
+a.workday{background-color:#e8f4fd;}
+
+a.workday .day_number{color:#0d62b8;}
+
+a.workday .day_sign{background-color:#0f72d8;}
+
+.modify_calendar{width:140px;
+                 height:185px;
+				 padding:5px 10px;
+				 text-align:center;
+				 position:absolute;
+				 right:-200px;
+				 top:0;
+				 display:none;
+				 border:1px solid #48a1ec;
+				 }  
+				 
+.modify_calendar h3{width:60px;
+                    height:60px;
+					display:inline-block;
+					line-height:60px;
+					color:#fff;
+					font-size:40px;
+					font-weight:100;
+					text-align:center;					
+					border-radius:4px;
+					background-color:#48a1ec;
+					}
+					
+.modify_calendar p{padding:5px 0 5px 0;}
+					
+.modify_calendar input{width:110px;
+                       height:29px;
+					   line-height:29px;
+					   font-size:16px;
+					   vertical-align:middle;
+					   border:none;
+					   text-align:center;
+					   padding:0 5px 0 5px;					   
+					   border-bottom:1px solid #c8cacc;
+					   }
+					   
+.modify_calendar a{display:inline-block;
+                   margin:4px;
+				   color:#8b8c8c;
+				   }
+				   
+.modify_calendar a.active{color:#000;}
+
+.modify_calendar a span{width:16px;
+                        height:16px;
+						line-height:16px;
+						color:#fff;
+						overflow:hidden;
+						font-size:13px;
+						text-indent:-1px;
+						display:inline-block;
+						font-family:Arial,"宋体",\5B8B\4F53;
+						background-color:#999b9c;
+						}
+						
+a.setting_rest.active span{background-color:#80b410;}
+
+a.setting_workday.active span{background-color:#0f72d8;}
+  
+
+/* --- EASYDROPDOWN DEFAULT THEME --- */
+
+/* PREFIXED CSS */
+
+.dropdown,
+.dropdown div,
+.dropdown li,
+.dropdown div::after{
+	-webkit-transition: all 150ms ease-in-out;
+	-moz-transition: all 150ms ease-in-out;
+	-ms-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+
+.dropdown .selected::after,
+.dropdown.scrollable div::after{
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	-ms-pointer-events: none;
+	pointer-events: none;
+}
+
+/* WRAPPER */
+
+.dropdown{
+	position: relative;
+	width:100%;
+	border: 1px solid #a8a7a7;
+	cursor: pointer;
+	background: #fff;
+	border-radius:4px;	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.dropdown.open{
+	z-index: 2;
+}
+
+.dropdown:hover{
+	/*box-shadow: 0 0 5px rgba(0,0,0,.15);*/
+}
+
+.dropdown.focus{
+	/*box-shadow: 0 0 5px rgba(51,102,248,.4);*/
+}
+
+/* CARAT */
+
+.dropdown .carat{
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -4px;
+	border: 6px solid transparent;
+	border-top: 8px solid #474848;
+}
+
+.dropdown.open .carat{
+	margin-top: -10px;
+	border-top: 6px solid transparent;
+	border-bottom: 8px solid #474848;
+}
+
+.dropdown.disabled .carat{
+	border-top-color: #999;
+}
+
+/* OLD SELECT (HIDDEN) */
+
+.dropdown .old{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.dropdown select{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.dropdown.touch .old{
+	width: 100%;
+	height: 100%;
+}
+
+.dropdown.touch select{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+/* SELECTED FEEDBACK ITEM */ 
+
+.dropdown .selected,
+.dropdown li{
+	display: block;
+	font-size: 14px;
+	line-height: 1;
+	color:#474848;
+	padding:8px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+.dropdown.disabled .selected{
+	color: #000;
+}
+
+.dropdown .selected::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 40px;	
+	border-radius: 0 2px 2px 0;
+	/*box-shadow: inset -55px 0 25px -20px #fff;*/
+}
+
+/* DROP DOWN WRAPPER */
+
+.dropdown div{
+	position: absolute;
+	height: 0;
+	left: -1px;
+	right: -1px;
+	top: 100%;
+	margin-top: -1px;
+	background: #fff;
+	border: 1px solid #a8a7a7;
+	border-top: 1px solid #eee;
+	border-radius: 0 0 4px 4px;
+	overflow: hidden;
+	opacity: 0;
+}
+
+/* Height is adjusted by JS on open */
+
+.dropdown.open div{
+	opacity: 1;
+	z-index: 2;
+}
+
+/* FADE OVERLAY FOR SCROLLING LISTS */
+
+.dropdown.scrollable div::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50px;
+	
+	box-shadow: inset 0 -50px 30px -35px #fff;
+}
+
+.dropdown.scrollable.bottom div::after{
+	opacity: 0;
+}
+
+/* DROP DOWN LIST */
+
+.dropdown ul{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.dropdown.scrollable.open ul{
+	overflow-y: auto;
+}
+
+/* DROP DOWN LIST ITEMS */
+
+.dropdown li{
+	list-style: none;
+	padding: 8px;
+}
+
+/* .focus class is also added on hover */
+
+.dropdown li.focus{
+	color:#000;
+	background: #e8f4fd;
+	position: relative;
+	z-index: 3;
+}
+
+.dropdown li.active{
+	color:#000;
+	font-weight: 700;
+}
+
+
+/*2014-9-1 add by zhengkai*/
+.divMainContent{top:0px;right:0px;bottom:0px; left:0px; position:absolute;overflow-x:hidden; overflow-y:auto}
+/*默认的datagrid的样式*/
+.datagrid-pager table{width:auto}
+.datagrid-view table{width:auto}
+.table_details td .datagrid-view  table{width:auto;
+                        margin:0 0 0 0;
+                        border:0;						
+						}
+
+/*2014-9-19 add by zhengkai */	   
+.datagrid-btable tr.current{color:#000;                       
+					   background:#f8edbc url(../../img/list_page_1.png) 0 -82px repeat-x;	/*theme需要修改的地方 对应main.css .table_list tr.current*/				 
+					   }
+					   
+.datagrid-btable td{/* color:#484a4b; */}
+
+.datagrid-btable td .datagrid-cell{text-overflow:ellipsis;word-wrap: normal;  white-space: nowrap;overflow: hidden; }
+					   
+.datagrid-btable tr.current td{color:#000;
+                         border-bottom:1px solid #eedb9a;/*theme需要修改的地方 对应main.css  .table_list tr.current td*/
+						  }
+			   
+.datagrid-btable td a{color:#0d74c2;
+                font-family:"Microsoft yahei","微软雅黑";
+				}
+
+.datagrid-btable td a:hover{color:#9a5b08;}/*theme需要修改的地方 对应main.css .table_list td a:hover*/
+
+.datagrid-btable td em,
+.datagrid-btable td i{font-style:normal;}
+
+.datagrid-btable td b{color:#3c8e0d;
+                 font-weight:100;
+				 }
+				 
+				 
+				 
+.datagrid-cell a
+{
+    color: #000;
+    font-family: "Microsoft yahei" , "微软雅黑";
+}
+
+.datagrid-btable input
+{
+    vertical-align: middle;
+}
+
+.datagrid-header td, .datagrid-btable td
+{
+    font-size: 14px;
+    text-align: left;
+    vertical-align: middle;
+    padding: 0 5px 0 5px;
+}
+
+.datagrid-header td
+{
+    height: 40px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 100;
+    white-space: nowrap;
+    border-bottom: 1px solid #e4ca71;/*theme需要修改的地方 对应main.css .table_list th*/
+    border-right: 1px solid #e4ca71;
+    background: #f4e3a8 url(../../img/list_page.png) repeat-x;/*theme需要修改的地方 对应main.css .table_list th*/
+}
+
+.datagrid-btable td
+{
+    line-height: 1.6;/*alter by zhengkai 1.7 改为1.6  2014-9-23*/
+    height: 37px;/*alter by zhengkai 39 改为37  2014-9-23*/
+    position: relative;
+    border-bottom: 1px solid #d4d7da;/*theme需要修改的地方 对应main.css .table_list td*/
+}
+
+/*table_details 下 sub_table_list datagrid的样式*/
+.table_details .sub_table_list .datagrid-header td
+{          
+    color:#000;
+    font-size:15px;
+    border-left:0;
+    padding:0 0 0 10px;
+    border-bottom:1px solid #cbcac4;/*theme需要修改的地方 对应main.css .table_details .sub_table_list th*/
+	background:#dfded8 url(../../img/list_page.png) 0 -82px repeat-x;/*theme需要修改的地方 对应main.css .table_details .sub_table_list th*/
+    
+}
+
+.table_details .sub_table_list .datagrid-btable td
+{
+    background-image:none;
+    padding:0 0 0 10px;
+    border-bottom:1px solid #d4d7da;/*theme需要修改的地方 对应main.css .table_details .sub_table_list td*/
+}
+
+
+/*tabs的样式*/
+.tabs{padding:12px 10px 0 1px;
+            }
+
+.tabs li{float:left;                
+				height:34px;
+				font-size:16px;
+				border:1px solid #d4a20b;/*theme需要修改的地方 对应basic.css ul.main_tabs li*/
+				border-bottom:none;
+				vertical-align:middle;
+				margin:0 5px 0 5px;
+				background-color:#f4e08d;/*theme需要修改的地方 对应basic.css ul.main_tabs li*/
+				}
+				
+.tabs li.tabs-selected{border:1px solid #fff;
+                         background:#fbe78c url(../../img/main_tabs.png) 0 -5px repeat-x;/*theme需要修改的地方 对应basic.css ul.main_tabs li.selected*/
+						 }
+				
+.tabs li a.tabs-inner{min-width:70px;
+                  width:auto!important;
+				  color::#6c4b18;/*theme需要修改的地方 对应basic.css ul.main_tabs li a*/
+				  height:34px;
+				  line-height:32px;
+				  display:inline-block;
+				  vertical-align:middle;
+				  padding:0 10px 0 15px;
+                  }
+				  
+.tabs li.selected a{color:#000;}
+						   
+.tabs li a.tabs-close
+{
+            min-width:14px;
+            float:right;
+            width:14px;
+			height:14px;
+			font-size:0;			
+			cursor:pointer;
+			display:inline-block;
+			vertical-align:middle;
+			margin:9px 5px 0 0;
+			background: url(../../img/main_tabs.png) 2px -51px no-repeat;
+			}
+			
+.tabs li a.tabs-close:hover
+{
+    background:#de2714 url(../../img/main_tabs.png) 2px -79px no-repeat;
+ }
+ 
+.tabs-header, .tabs-tool
+{
+    background-color: #e8b80f;/*2014-9-28 zhengkai 放到basic.css中*/
+}
+
+/*2014-9-29 add by zhengkai */
+.tabs-scroller-left,.tabs-scroller-right {
+	border-color: #e8b80f;
+}
+
+.tabs-scroller-left {
+	background: #e8b80f url('../../img/tabs_icons.png') no-repeat 1px -48px;/*2014-9-29 add by zhengkai */
+}
+
+.tabs-scroller-right {
+	background: #e8b80f url('../../img/tabs_icons.png') no-repeat -15px -48px;/*2014-9-29 add by zhengkai */
+}
+
+/*2014-9-11	zhengkai  datebox 控件样式*/
+.table_box td table td datebox
+{
+margin: 0 5px 0 0;
+padding:0 0 0 5px
+}
+			
+/*2014-9-11 zhengkai 弹出层样式*/
+.window
+{
+        font-size:14px;
+        padding:0px 0px 0px 0px;
+		 background-color:#fff;
+}
+		
+.window .window-header
+{
+        height:40px;   
+		padding:0 0 2px 0    
+ } 
+
+.window .window-header .panel-title
+{
+        height:40px;                
+		line-height:40px;
+		color:#fff;
+		font-size:17px;
+		overflow:hidden;
+		padding:0 10px 0 10px;
+		vertical-align:middle;
+		overflow:hidden;
+		border-top-left-radius:4px;
+		border-top-right-radius:4px;
+		background:#d4a80c url(../../img/list_page.png) 0 -697px repeat-x;/*theme需要修改的地方 对应main.css .pop_div .title*/
+}
+
+/*2014-9-9 弹出层中 表格默认显示*/			  
+.window .panel-body .datagrid-header td
+{
+        height:35px;
+        line-height:35px;
+        vertical-align:middle;
+        color:#000;
+        font-size:14px;
+        text-align:left;
+        font-weight:100;
+        border-bottom:1px solid #c2bfaf;/*theme需要修改的地方 对应main.css .pop_div .table_list th*/
+        background:#dfded8 url(../../img/list_page.png) 0 -697px repeat-x;/*theme需要修改的地方 对应main.css .pop_div .table_list th*/
+}
+			
+.window .panel-body .datagrid-btable td
+{
+        height:35px;
+        vertical-align:middle;
+        line-height:1.7;
+        border-bottom:1px solid #f3f4f4;
+}
+			
+.window .panel-body .files_list td
+{
+    font-size:14px;
+    padding:8px 0px 5px 10px;
+}
+						
+.window .panel-tool-close
+{
+            width:31px;
+            height:28px;
+			margin:0 5px 0 10px;
+			vertical-align:middle;
+			display:inline-block;
+			float:right;
+			border-radius:2px;
+			moz-border-radius:2px;
+			-webkit-border-radius:2px;
+			background:#fff url(../../img/sub_tools_icons.png) no-repeat;
+			
+			float:right;
+			cursor:pointer;
+			margin:6px 0 0 0;
+			background-position:-103px -78px;
+}
+
+.window  .panel-tool-close:hover{background-position:-103px -120px;}
+
+/*2014-9-15 弹出层 标题栏样式 add by zhengkai*/
+.panel-tool .title
+{
+   float:left;
+}
+
+.panel-tool .title .search_bar
+{
+    margin:3px 20px 0 0;
+    padding-left:10px;
+}
+
+.panel-tool .search_bar
+{
+    width:355px;
+    background: url(../../img/search_bar_bg_02.png)  no-repeat;			
+}
+
+.panel-tool .title  .submit_btn
+{
+    margin-top:7px;
+}
+
+/*处理弹出层 标题栏文本框 放上 往上移动的问题 及 search_bar 背景右边白色线显示 的问题 add by zhengkai*/
+.panel-tool .search_bar input
+{
+        height:auto;
+        padding-left:5px;
+        line-height:normal;
+        width:187px;
+}
+
+
+.panel-tool .search_bar select
+{
+        height:auto;
+        margin-left:0px;
+        line-height:normal;
+        width:105px;
+        border:none;
+        background-color:white;
+}
+
+
+/*处理树treegrid样式*/
+.treegrid-tr-tree div .datagrid-btable{
+	margin:0;
+	border:0px;
+}
+
+/*复制美工的fl进行改造*/
+.newfl{
+	border:1px solid #d8dcde;
+	margin:10px 0 10px 0.6%;	
+}
+
+
+/*消除tabledetailtd影响的class*/
+.table_details .not-tabledetail td{
+	background:	transparent;
+	height:35px;
+}
+
+/*增加三个图标的宽度*/
+.threeIcon{
+	width:96px !important;
+}
+
+/*增加四个图标的宽度*/
+.fourIcon{
+	width:128px !important;
+}
+
+/*增加五个图标的宽度*/
+.fiveIcon{
+	width:160px !important;
+}
+
+/*主界面左右箭头上表格样式*/
+.center-header{
+	background: #e8b80f;
+	height: 50px
+}
+
+
+/*主界面左右箭头下表格样式*/
+.center-body{
+	background: #f4e08d;
+}
+
+/*去掉主界面tabs的边框*/
+#tabs .tabs-panels 
+{
+border:0;
+border:none;
+}
+
+/*textarea行高*/
+.table_details textarea
+{
+    line-height:normal !important;
+}
+
+.title_show_bar{float:left;}
+.title_search_bar{float:left;
+            /* width:305px; */
+			height:36px;
+			margin:8px 0 0 20px ;
+			padding:1px 0 0 5px;
+			vertical-align:middle;
+			background: url(../../img/search_bar_bg_03.png) no-repeat;
+			}
+
+.title_search_bar input{border:none;
+                  width:186px;
+				  background:transparent;
+				  height:26px;
+				  line-height:26px;
+				  color:#383734;
+				  font-size:13px;
+				  padding-left:4px;
+				  vertical-align:middle;
+				  outline:none;
+                  }
+
+.title_search_bar select{
+                  width: 105px;
+                  }

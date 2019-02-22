@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0 0;font-size:14px; font-family:微软雅黑; color:#666666; text-decoration:none; background:#fafafa; }
+ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,p,input,select,label,form,tr,td{ padding:0; margin:0;}
+ul,li{ list-style:none;}
+img{border:0;}
+a{ color:#1984be;  text-decoration:none;  outline:none;  }  
+a:hover{color:#dd0000; }
+/*---------top-----------*/
+#top{ width:100%; height:81px; background:url(../img/topbj.jpg) repeat-x; }
+.top{ width:1000px; margin:auto;}
+.logo{ width:504px; height:56px; float:left; margin-top:10px; overflow:hidden;}
+.tuichu{ position:absolute; width:40px; height:20px; right:10px; top:60px; text-align:center; border: solid 1px #fff;}
+.tuichu a{  color:#fff;}
+.tuichu a:hover{ color:#FC0509;}
+/*---------------------内容区---------------*/
+.nr{ width:1010px; margin:auto; margin-top:20px; overflow:hidden;}
+.left{ width:198px;  overflow-y:auto; overflow-x:hidden;  height:600px; border:solid 1px #ebeff2; padding:1px; float:left; padding-bottom:0px; background:#fff; }
+.left h1{ background:#137bd0; height:34px; line-height:34px; font-size:16px; font-weight:400; color:#fff; padding-left:10px; margin-bottom:1px;}
+.menua{ margin:0px 0px 1px 0px; height:32px; line-height:32px; padding-left:26px; font-size:15px; background:url(../img/tb.gif) 10px center no-repeat; background-color:#aed1f9; color:#137bd0; }
+.cc_top{position: fixed;top: 0px;}
+/*左边菜单开始*/
+.left_nav{height:100%; overflow:auto; overflow-x:hidden;}
+.left_nav ul{padding:0;  height:100%;}
+.left_nav li{width:188px;	position:relative; display:inline-block; background:#d8e9fc; background-position:0px 0px; margin-bottom:1px;}
+.left_nav li a{width:150px;font-size:14px;color:#137bd0;  display:inline-block; margin-bottom:1px; background:url(../img/tb1.gif) 20px center no-repeat; padding-left:37px; height:30px; line-height:30px;}
+.left_nav li a:hover{  color:#e30101;}
+.left_nav li a span{ width:9px;
+                        height:30px; background:url(../img/jt.gif) no-repeat; background-position:0px 15px; font-size:0;
+						position:absolute;
+						top:0; right:15px;}
+						
+.left_nav li a:hover span,
+.left_nav li a.current span{ background:url(../img/jt.gif) no-repeat; background-position:0px -79px;}
+.left_nav li a.current{ color:#e30101; background:url(../img/tb2.gif) 20px center no-repeat; }
+.left_nav ul  dl{  padding:0px; margin:0px; margin-bottom:-1px; background:#fff; overflow:hidden;}		
+.left_nav ul  dl dd{ background:none; height:25px; line-height:25px; margin-bottom:1px;}
+.left_nav ul  dl dd a{ background:none; font-size:12px; color:#898a8a;}
+.left_nav ul  dl dd a:hover{ color:#e30101;}
+.left_nav ul  dl dd a.current{ color:#e30101; background:none;}
+/*----------------右边菜单----------------------*/
+.right{  width:798px; border:solid 1px #ebeff2; padding:1px; float:right;}
+.right h2{ background:#137bd0; height:34px; line-height:34px; font-size:14px; font-weight:400; color:#fff; padding-left:10px; margin-bottom:1px;}
+.righta{ width:778px; margin:auto; margin-bottom:20px;}
+.righta h3{ font-size:14px; height:30px; line-height:30px; font-weight:400; color:#1586d6;}
+.righta h4{ font-size:13px; height:20px; line-height:20px;  color:#000;  padding-left:25px;}
+.wz{ line-height:24px; font-size:13px; padding-left:25px;}
+.wz1{ line-height:20px; font-size:12px; padding-left:25px;}
+.xstp{ margin:10px 0px; padding-left:25px;}
+.xstp img{ border:3px solid #FC0509;}
+
+/*----------------版权---------------*/
+.upon{ width:100%;text-align:center; margin-top:40px; background:#e8e8e8; padding-top:20px; line-height:24px; padding-bottom:20px; color:#474a4b;}		
+.footer p{font-size:12px; line-height:25px;	 }
